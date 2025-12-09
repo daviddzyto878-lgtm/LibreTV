@@ -20,15 +20,24 @@ const SITE_CONFIG = {
     version: '1.0.3'
 };
 
-// API站点配置
+// ==========================================
+// 👇 修改重点：我已经把这里换成了可用的采集接口 👇
+// ==========================================
 const API_SITES = {
-    testSource: {
-        api: 'https://svip.ffzyplay.com/?url=',
-        name: '空内容测试源',
-        adult: true
+    feifan: {
+        api: 'https://cj.ffzyapi.com/api.php/provide/vod/',
+        name: '非凡资源(主)',
+        type: 'json',
+        adult: false
+    },
+    liangzi: {
+        api: 'https://cj.lziapi.com/api.php/provide/vod/',
+        name: '量子资源(备)',
+        type: 'json',
+        adult: false
     }
-    //ARCHIVE https://telegra.ph/APIs-08-12
 };
+// ==========================================
 
 // 定义合并方法
 function extendAPISites(newSites) {
